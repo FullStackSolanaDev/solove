@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$SOLove - The Memecoin of Love</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        /* Zorg ervoor dat de html en body de juiste instellingen hebben voor scrollen */
+        html, body {
+            height: 100%; /* Zorg ervoor dat de pagina volledig schaalbaar is */
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Voorkom horizontaal scrollen */
+        }
+
+        /* Zorg ervoor dat body altijd voldoende hoogte heeft */
+        body {
+            font-family: 'Dancing Script', cursive;
+            color: #ff4d88;
+            background-color: #ffe6f2;
+            text-align: center;
+            min-height: 100vh; /* Zorg ervoor dat de body altijd minimaal de hoogte van het scherm heeft */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* De secties */
+        section {
+            padding: 20px 15px;
+            margin: 10px 0; /* Zorg voor voldoende ruimte tussen de secties */
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 10px rgba(255, 0, 102, 0.8);
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .buttons a {
+            background-color: #ff66a3;
+            color: white;
+            padding: 12px 24px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+            box-shadow: 0 0 15px rgba(255, 102, 163, 0.7);
+        }
+
+        .buttons a:hover {
+            background-color: #ff3385;
+            box-shadow: 0 0 20px rgba(255, 51, 133, 1);
+        }
+
+        .video-section {
+            margin-top: 20px; /* Verminder de ruimte tussen de secties */
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .video-container {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 51, 133, 0.5);
+        }
+
+        /* Nieuw: Contractadres sectie */
+        .contract-address {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            color: #ff4d88;
+        }
+
+        .contract-address span {
+            font-weight: bold;
+        }
+
+        /* Zorg ervoor dat de secties goed worden weergegeven op mobiel */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            .contract-address {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="love-music.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <div class="hearts-container"></div>
+    
+    <!-- Welkomst sectie -->
+    <section class="welcome-section">
+        <div class="logo-container">
+            <img src="IMG_7026-removebg-preview.png" alt="$SOLove Logo" class="heartbeat">
+        </div>
+        <h1>💖 Welcome to $SOLove! 💖</h1>
+    </section>
+
+    <!-- Tekst sectie -->
+    <section class="text-section">
+        <p>
+            This Valentine’s Day, we’re bringing you a heartwarming experience on the Solana blockchain! 🌹✨
+        </p>
+        <p>
+            Whether you're here to degen, trade, or spread the love, $SOLove is all about connecting hearts in the digital world. 💫
+        </p>
+        <p>
+            Spread the love, ape in, and shill $SOLove everywhere! 💌
+        </p>
+    </section>
+
+    <!-- Contractadres sectie -->
+    <section class="contract-address-section">
+        <p class="contract-address">
+            CA: <span>Coming Soon</span>
+        </p>
+    </section>
+
+    <!-- Knoppen sectie -->
+    <section class="buttons-section">
+        <div class="buttons">
+            <a href="https://t.me/SOLove_sol" target="_blank" class="btn">Join Telegram 💬</a>
+            <a href="https://x.com/solove_sol" target="_blank" class="btn">Follow on Twitter 🐦</a>
+        </div>
+    </section>
+
+    <!-- Video sectie -->
+    <section class="video-section">
+        <div class="video-container">
+            <video controls>
+                <source src="lv_0_20250212170135.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const heartsContainer = document.querySelector(".hearts-container");
+
+            setInterval(() => {
+                let heart = document.createElement("div");
+                heart.className = "heart";
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+                heartsContainer.appendChild(heart);
+                setTimeout(() => heart.remove(), 5000);
+            }, 300);
+        });
+    </script>
+</body>
+</html>
